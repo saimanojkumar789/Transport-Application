@@ -1,0 +1,46 @@
+
+<mat-toolbar  class="navbar navbar-dark bg-secondary">
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/allroutes">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+        <button mat-menu-item routerLink="/favourite">
+          <mat-icon>favorite</mat-icon>
+          <span>Favorite</span>
+        </button>
+         <button mat-menu-item routerLink="/updatepass">
+          <mat-icon>settings</mat-icon>
+          <span>Edit Profile</span>
+        </button> 
+      </mat-menu>
+
+
+      <a  *ngIf="!loggedIn" class="example-icon navbutton" aria-label="Example icon-button with share icon">
+        <mat-icon style="cursor:pointer">home</mat-icon>
+        
+        <span style="font-size:large; text-decoration: none; color: black; font-family: sans-serif;" routerLink="" style="cursor:pointer">Home</span>
+      </a>  
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon" aria-label="Example icon-button with menu icon" *ngIf="loggedIn">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    <span>Transport App</span>
+    <span class="example-spacer"></span>
+   
+    <a  *ngIf="loggedIn" class="example-icon favorite-icon navbutton" aria-label="Example icon-button with heart icon">
+      <mat-icon>person</mat-icon><span style="font-size:large;">{{user}}</span>
+        
+    </a>
+    <a *ngIf="loggedIn" class="example-icon navbutton" aria-label="Example icon-button with share icon">
+      <mat-icon>logout</mat-icon> <span style="font-size:large;" (click)="logOutUser()" style="cursor:pointer">LogOut</span>
+    </a>
+    <a  *ngIf="!loggedIn" class="example-icon navbutton" aria-label="Example icon-button with share icon">
+      <mat-icon style="cursor:pointer">logout</mat-icon>
+      
+      <span style="font-size:large; text-decoration: none; color: black; font-family: sans-serif;" routerLink="/login" style="cursor:pointer">LogIn</span>
+    </a>
+
+</mat-toolbar>

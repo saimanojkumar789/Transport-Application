@@ -1,0 +1,51 @@
+<div class="outer">
+    <div>
+        <br><br>
+        <div class="input-group container1">
+            <input type="search" class="inp rounded " #source placeholder="Enter source" [(ngModel)]="sourcesearch" aria-label="Search"
+                aria-describedby="search-addon" />
+            <input type="search" class="inp rounded" #destination placeholder="Enter destination" [(ngModel)]="destinationsearch" aria-label="Search"
+                aria-describedby="search-addon" />
+            <button type="button" class="go_button"
+                (click)="gettingCoordinates(source.value, destination.value)">Go</button>
+            <button (click)="makeFav()" type="button"> Make Favorite </button>
+        </div>
+        <br>
+        <hr>
+    </div>
+
+    <div>
+        <div>
+            <div class="bootstrap-wrapper">
+                <div class="container">
+
+                    <div *ngFor="let route of allRoutes let i=index" class="news-card shadow p-3 mb-5 bg-body rounded mleft">
+                        <div class="route_view">
+                        <h1>Route {{i+1}}</h1> 
+                        
+                        </div>
+                        <hr>
+                        <p> Duration : {{route?.duration}}</p>
+                        <p>Departure Time : {{route?.departure_time}}</p>
+                        <p>Arrival Time : {{route?.arrival_time}}</p>
+                        <p> Distance : {{route?.distance_desc}}</p>
+                        <hr>
+                        <div *ngFor="let routeP of route?.route_parts let j=index">
+                            <p>{{j+1}}</p>
+                            <p>Mode &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{routeP?.mode}}</p>
+                            <p>From &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {{routeP?.from_point_name}}</p>
+                            <p>To &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {{routeP?.to_point_name}}</p>
+                            <p>Departure Time : {{routeP?.departure_time}}</p>
+                            <p>Arrival Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {{routeP?.arrival_time}}</p>
+                            <p>Distance  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{routeP?.distance_desc}}</p>
+                            <br>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

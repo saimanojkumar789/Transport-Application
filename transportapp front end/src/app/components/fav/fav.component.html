@@ -1,0 +1,25 @@
+<div>
+    <div class="container">
+        <br>
+        <h1>My Favourites</h1>
+        <table class="table mt-4 tableblock">
+            <thead>
+                <tr>
+                    <th scope="col">Source</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col"></th>
+
+                  
+                </tr>
+            </thead>
+
+            <tbody>
+            <tr *ngFor="let list of myFavourites">
+                <td>{{list?.source}}</td>
+                <td>{{list?.destination}}</td>
+                <!-- <button (click)="deleteFav(list.source,list.destination)" type="submit"> Delete </button> -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

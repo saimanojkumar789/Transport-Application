@@ -1,0 +1,40 @@
+<div class="outer">
+    <br>
+    <div class="mainpg">
+        <div class="card centerall">
+            <h2>Login</h2>
+            <hr>
+            <div class="card-body">
+                <form [formGroup]="loginuser" (ngSubmit)="login()">
+
+                    <div class="input-group mb-3 inp">
+                        <input type="email" class="form-control" formControlName="email" placeholder="Enter email">
+                        <span class="glyphicon glyphicon-user from form-control-feedback"> </span>
+                    </div>
+
+                    <div class="input-group mb-3 inp">
+                        <input type="password" class="inp form-control" formControlName="password"
+                            placeholder="Enter password">
+                            <span class="glyphicon glyphicon-lock from form-control-feedback"> </span>
+                    </div>
+
+                    <div>
+                        <button type="submit" id="submit" class="btn btn-primary" [disabled]="loginuser.invalid">
+                            <li class="glyphicon glyphicon-log-in"></li>   
+                            LOGIN
+                        </button>
+                    </div>
+                    <br>
+                    <div>
+                        <label>
+                            Don't have an account?
+                            <a routerLink="/register"> Register here</a>
+
+                        </label>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

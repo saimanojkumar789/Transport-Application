@@ -1,0 +1,36 @@
+<div class="outer">
+    <br>
+    <div class="mainpg">
+        <div class="card centerall">
+            <h2>Registration Form </h2>
+            <hr>
+            <div class="card-body">
+                <form [formGroup]="registeruser" (ngSubmit)="register()">
+                    <div class="input-group mb-3 inp">
+                        <input type="text" class="form-control" formControlName="userName" placeholder="Enter FullName">
+                        <span class="glyphicon glyphicon-user from form-control-feedback"> </span>
+                    </div>
+
+                   <div class="input-group mb-3 inp">
+                        <input type="email" class="form-control" formControlName="email" placeholder="Enter Mail ID">
+                        <span class="glyphicon glyphicon-envelope from form-control-feedback"> </span>
+                    </div>
+
+                    <div class="input-group mb-3 inp">
+                        <input type="password" class="form-control" formControlName="password"
+                            placeholder="Enter password">
+                            <span class="glyphicon glyphicon-eye-close from form-control-feedback"> </span>
+                    </div>
+
+                    <div>
+                        <button type="submit" id="submit" class="btn btn-primary" [disabled]="registeruser.invalid">
+                            <li class="glyphicon glyphicon-ok-circle"></li>  Register</button>
+                    </div>
+                    <br>
+                   
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
